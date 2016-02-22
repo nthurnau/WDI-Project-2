@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PetDates</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <% if logged_in? %>
+    <%= link_to 'Logout', logout_path %>
+    <% else %>
+      <%= link_to 'Login', new_session_path %>
+  <% end %>
+
+  <% if flash[:success] %>
+    <div class="alert alert-success"><%=flash[:success]%></div>
+  <% elsif flash[:fail] %>
+        <div class="alert alert-danger"><%=flash[:fail]%></div>
+  <% end %>
+
+  <script>
+    $('.alert').delay(2000).slideUp()
+  </script>
+
+<%= yield %>
+
+</body>
+</html>

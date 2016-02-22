@@ -1,0 +1,24 @@
+<h1>Start a Profile for your Pookie!</h1>
+
+<%= form_for @profile, url: users_path, html: { multipart: true } do |f| %>
+  <%= f.label :name, "What is Pookie's name?" %>
+  <%= f.text_field :name %> <br><br>
+
+  <%= f.label :location, "Location" %>
+  <%= f.text_field :location %> <br><br>
+
+  <%= f.label :breed, "What breed is your pookie?" %>
+  <%= f.text_field :breed %> <br><br>
+
+  <%= f.label :favorite_food, "What are Your Pookie's Favorite Foods?" %>
+  <%= f.text_area :favorite_food %> <br><br>
+
+  <%= f.label :behavior, "How does your Pookie play with others? Is she or he a leader or a follower?" %>
+  <%= f.text_area :behavior %> <br><br>
+
+  <%= f.label :activities, "What activities does Pookie like?" %>
+  <%= f.text_area :activities %>
+
+  <%= f.submit %>
+
+<% end %>

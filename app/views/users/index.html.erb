@@ -1,0 +1,6 @@
+<h1>Featured Pets</h1>
+
+<% @users.reverse.each do |u| %>
+  <h3> <%= u.username %> </h3>
+  <%= image_tag u.avatar.url(:medium) %> <hr>
+<% end %>
