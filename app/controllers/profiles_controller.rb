@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-
-before_action :authorize, only: [:new]
+# before_action :authenticate, only: [:show]
+before_action :authorize, only: [:edit, :show]
 
   def index
     @profile = Profile.all
@@ -8,17 +8,15 @@ before_action :authorize, only: [:new]
 
   def show
     @profile = Profile.find(params[:id])
+
   end
 
   def new
-    @profile = Profile.new
+
   end
 
   def create
-    @profile = current_user.profiles.new(profile_params)
-      if @profile.save
-          redirect_to profile_path(@profile)
-      end
+
   end
 
   def edit
@@ -28,20 +26,20 @@ before_action :authorize, only: [:new]
   def update
     @profile = Profile.find(params[:id])
       if @profile.update_attributes(profile_params)
-        redirect_to profile_path(@profile)
+        redirect_to profile_path
       end
   end
 
   def destroy
     @profile = Profile.find(params[:id])
     if @profile.destroy
-      redirect_to user_path
+      redirect_to user_path(@user)
     end
   end
 
   private
   def profile_params
-    params.require(:profile).permit(:name, :location, :breed, :favorite_food, :behavior, :activities)
+    params.require(:profile).permit(:name, :location, :breed, :favorite_food, :behavior, :activities, :avatar)
   end
 
 end

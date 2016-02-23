@@ -5,4 +5,7 @@
 <!-- <%= image_tag @user.avatar.url(:thumb) %> -->
 
 <%= link_to "Edit User Name", edit_user_path %> <br>
-<%= link_to "Delete Your Account", destroy_user_path, method: :delete%>
+<%= link_to "Delete Your Account", destroy_user_path, method: :delete%> <br>
+<%= link_to "Start Your Pookie's Profile", new_profile_path %> <br>
+<%= link_to "Edit Your Profile", edit_profile_path %> <br>
+<%= link_to "Go to Your Profile", profile_path %>

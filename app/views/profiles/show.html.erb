@@ -1,2 +1,14 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<h1> Here's Your Pookie's Profile </h1>
+
+
+<%= image_tag @profile.avatar.url(:medium) %> <br><br>
+<h2> <%= @profile.name %> </h2> <br><br>
+<%= @profile.location %> <br><br>
+<%= @profile.breed %> <br><br>
+<%= @profile.favorite_food %> <br><br>
+<%= @profile.behavior %> <br><br>
+<%= @profile.activities %> <br><br>
+
+<%= link_to "Edit Your Profile", edit_profile_path %><br>
+<%= link_to "Edit User Info", edit_user_path %> <br>
+<%= link_to "Delete Your Account", destroy_user_path, method: :delete%> <br>

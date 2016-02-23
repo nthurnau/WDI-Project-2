@@ -1,16 +1,19 @@
 Rails.application.routes.draw do
 
-  root 'wecome#index'
+  get '/' => 'welcome#index'
 
   resources :users
 
   delete 'user/:id' => 'users#destroy', as: :destroy_user
 
+
+  resources :profiles
+
+
   get '/logout' => 'sessions#destroy', as: :logout
 
   resources :sessions, only: [:new, :create]
 
-  resources :profiles
 
 
 end
