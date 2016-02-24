@@ -1,11 +1,13 @@
 <h1>Start a Profile for your Pookie!</h1>
 
-<%= form_for @profile url: profile_path, html: { multipart: true } do |f| %>
-  <%= f.label :avatar, "Profile Photo" %>
-  <%= f.file_field :avatar %> <br> <br>
+
+<%= form_for @profile, url: profile_path, html: { multipart: true } do |f| %>
 
   <%= f.label :name, "What is Pookie's name?" %>
   <%= f.text_field :name %> <br><br>
+
+  <%= f.label :avatar, "Profile Photo" %>
+  <%= f.file_field :avatar %> <br> <br>
 
   <%= f.label :location, "Location" %>
   <%= f.text_field :location %> <br><br>
@@ -20,7 +22,7 @@
   <%= f.text_area :behavior %> <br><br>
 
   <%= f.label :activities, "What activities does Pookie like?" %>
-  <%= f.text_area :activities %><br>
+  <%= f.text_area :activities %>
 
   <%= f.submit %>
 

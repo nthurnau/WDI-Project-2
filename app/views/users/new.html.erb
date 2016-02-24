@@ -13,6 +13,31 @@
   <%= f.label :avatar, "Profile Photo" %>
   <%= f.file_field :avatar %> <br> <br>
 
-  <%= f.submit %>
 
+
+<%= f.fields_for :profile do | profile_form | %>
+  <%= profile_form.label :name, "What is Pookie's name?" %>
+  <%= profile_form.text_field :name %> <br><br>
+
+  <%= profile_form.label :avatar, "Profile Photo" %>
+  <%= profile_form.file_field :avatar %> <br> <br>
+
+  <%= profile_form.label :location, "Location" %>
+  <%= profile_form.text_field :location %> <br><br>
+
+  <%= profile_form.label :breed, "What breed is your pookie, and What Does He or She Look Like?" %>
+  <%= profile_form.text_field :breed %> <br><br>
+
+  <%= profile_form.label :favorite_food, "What are Your Pookie's Favorite Foods?" %>
+  <%= profile_form.text_area :favorite_food %> <br><br>
+
+  <%= profile_form.label :behavior, "How does your Pookie play with others? Is she or he a leader or a follower?" %>
+  <%= profile_form.text_area :behavior %> <br><br>
+
+  <%= profile_form.label :activities, "What activities does Pookie like?" %>
+  <%= profile_form.text_area :activities %>
+
+<% end %>
+
+<%= f.submit %>
 <% end %>
