@@ -6,17 +6,6 @@
     <div class="panel-body">
       <%= f.content %>
     </div>
-    <div class="panel-footer">
-      <% if @user == current_user %>
-      <div class="row">
-        <div class="col-md-1"><p> <%= link_to "Edit", edit_micropost_path(f), class: "btn btn-primary" %> </p></div>
-        <div class="col-md-1"><p> <%= link_to "Delete", f, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %> </p></div>
-      </div>
-      <% else %>
-      <div class="row">
-        <div class="col-md-1"><p> <%= link_to "Profile", user_path(@user), class: "btn btn-primary" %> </p></div>
-      </div>
-      <% end %>
-    </div>
+  
   </div>
 <% end %>

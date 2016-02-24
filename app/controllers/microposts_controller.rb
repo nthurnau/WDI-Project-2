@@ -6,9 +6,9 @@ class MicropostsController < ApplicationController
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
       flash[:success] = "PetSound created!"
-      redirect_to user_path
+      redirect_to current_user
     else
-      redirect_to user_path
+      redirect_to current_user
     end
   end
 
