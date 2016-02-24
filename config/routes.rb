@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+
+
   root                'sessions#new'
     get    'help'    => 'static_pages#help'
     get    'about'   => 'static_pages#about'
@@ -23,7 +25,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create]
 
-  # resources :microposts,          only: [:create, :destroy]
+  resources :microposts,          only: [:create, :destroy]
   #microposts POST   /microposts(.:format)          microposts#create
   #micropost DELETE /microposts/:id(.:format)      microposts#destroy
   resources :relationships,       only: [:create, :destroy]

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_one :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
+  has_many :microposts, dependent: :destroy
 
   #implements the active relationships assosciation for the users
   has_many :active_relationships, class_name:  "Relationship",
