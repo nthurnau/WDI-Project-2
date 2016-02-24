@@ -6,6 +6,12 @@
 
 <!-- wrapping the links in an if makes the edit and deletes impossible for other users -->
 
+<section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+<%= render 'follow_form' %>
+
+
 <% if @user == current_user  %>
   <%= link_to "Edit User Info", edit_user_path %> <br>
   <%= link_to "Edit Your Profile", edit_profile_path %> <br>

@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   before_action :authorize, only: [:show]
 
+  before_action :current_user, only: [:index, :edit, :update, :destroy,
+                                      :following, :followers]
+
 
   def index
     @users = User.all
@@ -44,6 +47,20 @@ class UsersController < ApplicationController
       if @user.destroy
         redirect_to new_session_path
       end
+  end
+  
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
 
   private

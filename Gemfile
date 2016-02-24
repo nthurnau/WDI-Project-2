@@ -28,9 +28,17 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "paperclip", "~> 4.3"
 
+gem 'faker'
+
 gem 'aws-sdk', '< 2.0'
 
 gem 'rails_12factor', group: :production
+
+gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'bootstrap_form'
+
+gem 'will_paginate'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
