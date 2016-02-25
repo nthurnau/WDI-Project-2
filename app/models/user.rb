@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
   has_many :microposts, dependent: :destroy
+  #implements the relationship between user and groups
+  has_and_belongs_to_many :groups
 
   #implements the active relationships assosciation for the users
   has_many :active_relationships, class_name:  "Relationship",

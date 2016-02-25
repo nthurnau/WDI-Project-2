@@ -40,6 +40,7 @@ gem 'bootstrap_form'
 
 gem 'will_paginate'
 
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

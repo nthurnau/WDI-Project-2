@@ -1,0 +1,15 @@
+<h1> Welcome to <%= @group.name %></h1>
+
+
+<!-- <%# image_tag @group.avatar.url(:medium) %> <br><br> -->
+
+<p> About this group</p><br>
+ <%= @group.description %> </p> <br><br>
+
+<%= link_to 'Join Group', join_group_path(@group) %> <br>
+<%= link_to 'Leave Group', leave_group_path(@group) %> <br><br>
+
+<% @group.users.each do |user| %>
+  <%= user.username %> <br>
+  <%= image_tag user.avatar.url(:thumb) %> <br><br>
+<% end %>

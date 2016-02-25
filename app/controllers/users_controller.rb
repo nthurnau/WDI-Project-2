@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.build_profile
+    @user.build_group
   end
 
   def create
@@ -34,12 +35,13 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @user.build_profile
+    @user.build_group
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to user_path(@user) #not working, don't know why
+      redirect_to user_path(@user)
     else
       redirect_to edit_user_path(@user)
     end
@@ -65,6 +67,8 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
+
+  
 
   private
   def user_params

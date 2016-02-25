@@ -1,0 +1,12 @@
+<h1>Create a New Group!</h1>
+
+<%= form_for @group do |f| %>
+  <%= f.label :name, "Name Your Group" %>
+  <%= f.text_field :name %> <br>
+
+  <%= f.label :description, "Describe your group. What are your interests? Who should Join?" %>
+  <%= f.text_area :description %> <br>
+
+  <%= f.submit %>
+
+  <% end %>
