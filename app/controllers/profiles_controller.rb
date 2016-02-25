@@ -8,11 +8,12 @@ before_action :authorize, only: [:edit, :show]
 
   def show
     @profile = Profile.find(params[:id])
+    @microposts = @profile.user.microposts
+    @feed_items = @profile.user.feed.paginate(page: params[:page])
 
   end
 
   def new
-
   end
 
   def create

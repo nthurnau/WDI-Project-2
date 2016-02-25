@@ -1,4 +1,4 @@
-<h1> Here's Your Pookie's Profile </h1>
+<h1> <%= @profile.name %>'s Profile </h1>
 
 
 <%= image_tag @profile.avatar.url(:medium) %> <br><br>
@@ -9,6 +9,12 @@
 <%= @profile.behavior %> <br><br>
 <%= @profile.activities %> <br><br>
 
+<!-- Shows PetSouds, does not work  -->
+  <div>
 
+        <%= render 'shared/feed' %>
 
-  <%= link_to "Back to Your Settings", user_path %> <br>
+  </div>
+
+  <%= link_to "Back to Your Settings", current_user %> <br>
+<%# render 'users/microposts', :microposts => @microposts %>

@@ -6,6 +6,13 @@
     <div class="panel-body">
       <%= f.content %>
     </div>
-  
+    <div class="panel-footer">
+      <% if @user == current_user %>
+      <div class="row">
+        <div class="col-md-1"><p>  <%= link_to "Delete PetSound", micropost, method: :delete,
+                                       data: { confirm: "You sure?" }, class: "btn btn-primary" %> </p></div>
+      </div>
+      <% end %>
+    </div>
   </div>
 <% end %>
