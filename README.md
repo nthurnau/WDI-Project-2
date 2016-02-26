@@ -1,6 +1,6 @@
 # PetDates
 
-PetDats was created by Nicole Thurnau as her second project for General Assembly's WDI course in Santa Monica.
+PetDates was created by Nicole Thurnau as her second project for General Assembly's WDI course in Santa Monica.
 
 ### Obejective
 PetDates is a social networking site for pets and their human companions. The goal is to connect pets so that they may make new friends, gossip about their companions, and sniff each other online and in real-life. Pet companions can use the site too! They can meet other companions who have pets similar to theirs, join and create special interest groups, and most importantly, arrange pet meet-ups with other local pet companions.
@@ -27,9 +27,7 @@ Necessary Deliverables
 
 
 ### Wireframes
-![Ambitious Wireframe for User Home Page](images/wireframes/UserHome.png)
-![Ambitious Wireframe for Group Home Page](images/wireframes/Groups.png)
-![Ambitious Wireframe for Profile Home Page](images/wireframes/Profile.png)
+See my [Trello Board for Project 2](https://trello.com/b/rrfmu7vt/wdi-project-two)'s done column for wireframes.
 
 
 ### Technologies Used
