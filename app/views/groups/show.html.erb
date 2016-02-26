@@ -13,3 +13,11 @@
   <%= user.username %> <br>
   <%= image_tag user.avatar.url(:thumb) %> <br><br>
 <% end %>
+
+<h3><%= @group.name %> Pet Dates</h3>
+
+  <h5> PetDate Name: <%= @group.event_name %> </h5> <br>
+  <h5> PetDate Location: <%= @group.event_location %> </h5> <br>
+  <h5> PetDate: <%= @group.event_date %> </h5> <br>
+  <h5> PetDate Time: <%= @group.event_time %> </h5> <br>
+  <%= link_to "Add An Event!", edit_group_path %>
