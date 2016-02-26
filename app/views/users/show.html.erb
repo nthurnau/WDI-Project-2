@@ -37,8 +37,7 @@
 
 <!-- wrapping the links in an if makes the edit and deletes impossible for other users -->
 <% if @user == current_user  %>
-  <%= link_to "Edit User Info", edit_user_path %> <br>
-  <%= link_to "Edit Your Profile", edit_profile_path(@user.profile.id) %> <br>
+  <%= link_to "Edit User Info and Profile", edit_user_path %> <br>
   <%= link_to "Go to Your Pet's Profile", profile_path(@user.profile.id) %> <br>
   <%= link_to "Delete Your Account", destroy_user_path, method: :delete%>
 <% end %>

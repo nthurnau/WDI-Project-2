@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.build_profile
-    @user.build_group
+    # @user.build_group
   end
 
   def create

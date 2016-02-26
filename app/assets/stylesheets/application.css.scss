@@ -19,8 +19,30 @@
 
 @import "bootstrap";
 
-/* microposts */
+$gray-light: #8C8C8C;
+$gray-lighter: #8C8C8C;
+/* Site-Wide Styling*/
+body {
+  background: #E87272;
 
+
+}
+.h2_session_new {
+  text-align: center;
+  color: white;
+}
+
+.jumbotron {
+  background: #988AFF;
+  text-align: center;
+  font-family: Avocado-Regular;
+  color: white;
+  border: 5px solid white;
+  border-radius: 500px;
+}
+
+// /* microposts */
+//
 .microposts {
   list-style: none;
   padding: 0;
