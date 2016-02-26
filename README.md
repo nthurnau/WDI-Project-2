@@ -3,6 +3,7 @@
 PetDates was created by Nicole Thurnau as her second project for General Assembly's WDI course in Santa Monica.
 
 ### Obejective
+https://pet-dates.herokuapp.com/
 PetDates is a social networking site for pets and their human companions. The goal is to connect pets so that they may make new friends, gossip about their companions, and sniff each other online and in real-life. Pet companions can use the site too! They can meet other companions who have pets similar to theirs, join and create special interest groups, and most importantly, arrange pet meet-ups with other local pet companions.
 
 ### Project Requirements
