@@ -1,5 +1,6 @@
 <h1>Create a New Group!</h1>
 
+<div class="form">
 <%= form_for @group do |f| %>
   <%= f.label :name, "Name Your Group" %>
   <%= f.text_field :name %> <br>
@@ -10,3 +11,4 @@
   <%= f.submit %>
 
   <% end %>
+</div>

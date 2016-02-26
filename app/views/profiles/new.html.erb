@@ -1,5 +1,7 @@
 <h1>Start a Profile for your Pookie!</h1>
 
+<div class="form">
+
 
 <%= form_for @profile, url: profile_path, html: { multipart: true } do |f| %>
 
@@ -27,3 +29,4 @@
   <%= f.submit %>
 
 <% end %>
+</div>

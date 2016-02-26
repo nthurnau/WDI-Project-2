@@ -1,4 +1,5 @@
 <h1>Edit Your User Information</h1>
+<div class="form">
 
 <%= form_for @user, html: { multipart: true } do |f| %>
   <%= f.label :username, "Username" %>
@@ -40,3 +41,4 @@
 
 <%= f.submit %>
 <% end %>
+</div>

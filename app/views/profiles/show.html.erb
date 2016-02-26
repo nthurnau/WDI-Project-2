@@ -1,25 +1,30 @@
 <h1> <%= @profile.name %>'s Profile </h1>
 
-
-<%= image_tag @profile.avatar.url(:medium) %> <br><br>
-<p> Pet's Name: <%= @profile.name %> </p> <br><br>
-<p> Pet's Location: <%= @profile.location %></p> <br><br>
-<p>Pet's Breed: <%= @profile.breed %></p> <br><br>
-<p>Pet's Favorite Food: <%= @profile.favorite_food %></p> <br><br>
-<p>Pet's Behavior: <%= @profile.behavior %></p> <br><br>
-<p>Pet's Favorite Activities: <%= @profile.activities %></p> <br><br>
-
+<div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @profile.avatar.url(:medium) %> <br><br>
+        <p> Pet's Name: <%= @profile.name %> </p> <br><br>
+        <p> Pet's Location: <%= @profile.location %></p> <br><br>
+        <p>Pet's Breed: <%= @profile.breed %></p> <br><br>
+        <p>Pet's Favorite Food: <%= @profile.favorite_food %></p> <br><br>
+        <p>Pet's Behavior: <%= @profile.behavior %></p> <br><br>
+        <p>Pet's Favorite Activities: <%= @profile.activities %></p> <br><br>
+      </div>
+  <div class="col-md-4">
 <!-- shows friends stats -->
-<section class="stats">
-      <%= render 'shared/stats' %>
-    </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
 
  <!-- shows friend button  -->
-<%= render 'users/follow_form' %> <br>
-
+      <%= render 'users/follow_form' %> <br>
+    </div>
 <!-- Shows User's PetSouds  -->
-<div>
-      <%= render 'shared/feed' %>
+    <div class="col-md-4">
+      <div>
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+  </div>
 </div>
-
-  <%= link_to "Back to Your Settings", current_user %> <br>
