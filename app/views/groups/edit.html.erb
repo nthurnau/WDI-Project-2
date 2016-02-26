@@ -1,2 +1,12 @@
-<h1>Groups#edit</h1>
-<p>Find me in app/views/groups/edit.html.erb</p>
+<%= form_for @group do |f| %>
+  <%= f.label :event_name, "Name of PetDate" %>
+  <%= f.text_field :event_name %> <br>
+
+  <%= f.label :event_location, "Location For PetDate" %>
+  <%= f.text_field :event_location %> <br>
+
+  <%= f.label :event_date, "Date of PetDate" %>
+  <%= f.text_field :event_date %> <br>
+
+  <%= f.label :event_time, "Time for PetDate" %>
+  <%= f.text_field :event_name %> <br>  

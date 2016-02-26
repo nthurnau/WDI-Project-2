@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @user.build_profile
-    @user.build_group
+    # @user.build_group
   end
 
   def update
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
-  
+
 
   private
   def user_params

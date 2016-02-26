@@ -37,20 +37,20 @@ class GroupsController < ApplicationController
 
   def join
     @group = Group.find(params[:id])
-    @group.users << current_user
+    @group.add_user(current_user)
     redirect_to group_path(@group)
   end
 
   def leave
     @group = Group.find(params[:id])
-    current_user.update_attributes(:group_id nil)
+    @group.remove_user(current_user)
     redirect_to group_path(@group)
   end
 
 
 private
   def group_params
-    params.require(:group).permit(:name, :description)
+    params.require(:group).permit(:name, :description, :event_name, :event_location, :event_date, :event_time)
   end
 
 end
