@@ -1,43 +1,59 @@
+<div class="user_title">
 <h1><%= @user.username %>'s Home Page</h1>
-
-<!-- <%= image_tag @user.avatar.url %> -->
 <%= image_tag @user.avatar.url(:medium) %> <br><br>
-<!-- <%= image_tag @user.avatar.url(:thumb) %> -->
+</div>
 
-<!-- Allows user to compose PetSound -->
-<% if @user == current_user  %>
-  <% if logged_in? %>
-    <div class="row">
-      <aside class="col-md-4">
-        <section class="micropost_form">
-          <%= render 'shared/micropost_form' %>
-        </section>
-      </aside>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-4">
+
+      <!-- Allows user to compose PetSound -->
+      <h2> Pet Sounds </h2>
+      <% if @user == current_user  %>
+        <% if logged_in? %>
+          <div class="row">
+            <aside class="col-md-4">
+              <section class="micropost_form">
+                <%= render 'shared/micropost_form' %>
+              </section>
+            </aside>
+          </div>
+        <% end %>
+      <% end %>
+      <!-- Shows PetSouds On Page -->
+      <div class="col-md-8">
+         <% if @user.microposts.any? %>
+           <h3>PetSounds (<%= @user.microposts.count %>)</h3>
+           <ol class="microposts">
+             <%= render @microposts %>
+           </ol>
+           <%= will_paginate @microposts %>
+         <% end %>
+       </div> <br>
     </div>
-  <% end %>
-<% end %>
-<!-- Shows PetSouds On Page -->
-<div class="col-md-8">
-   <% if @user.microposts.any? %>
-     <h3>PetSounds (<%= @user.microposts.count %>)</h3>
-     <ol class="microposts">
-       <%= render @microposts %>
-     </ol>
-     <%= will_paginate @microposts %>
-   <% end %>
- </div> <br>
 
-<%= link_to "Create a New Group", new_group_path %>
 
-<!-- Shows Friends On Page -->
-<section class="stats">
-      <%= render 'shared/stats' %>
-    </section>
-<%= render 'follow_form' %>
+    <div class="col-md-4">
+      <h2><%= @user.username %>'s Groups</h2>
+      <%= link_to "Create a New Group", new_group_path %>
 
-<!-- wrapping the links in an if makes the edit and deletes impossible for other users -->
-<% if @user == current_user  %>
-  <%= link_to "Edit User Info and Profile", edit_user_path %> <br>
-  <%= link_to "Go to Your Pet's Profile", profile_path(@user.profile.id) %> <br>
-  <%= link_to "Delete Your Account", destroy_user_path, method: :delete%>
-<% end %>
+      <!-- Shows Friends On Page -->
+      <section class="stats">
+            <%= render 'shared/stats' %>
+          </section>
+      <%= render 'follow_form' %>
+    </div>
+
+
+    <div class="col-md-4">
+      <h2><%= @user.username %>'s House Keeping</h2>
+      <!-- wrapping the links in an if makes the edit and deletes impossible for other users -->
+      <% if @user == current_user  %>
+        <%= link_to "Edit User Info and Profile", edit_user_path(current_user) %> <br>
+        <%= link_to "Go to Your Pet's Profile", profile_path(current_user.profile.id) %> <br>
+        <%= link_to "Delete Your Account", destroy_user_path, method: :delete%>
+      <% end %>
+    </div>
+  </div>
+</div>

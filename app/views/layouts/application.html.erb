@@ -9,23 +9,58 @@
 </head>
 <body>
 
-  <% if logged_in? %>
-    <%= link_to 'Logout', logout_path %>
-    <% else %>
-      <%= link_to 'Login', new_session_path %>
-  <% end %>
+<div class="navbar navbar-inverse navbar-static-top">
+  <div class="container">
+    <div class="brand">PetDates</div>
+    <button class="navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
 
-  <% if flash[:success] %>
-    <div class="alert alert-success"><%=flash[:success]%></div>
-  <% elsif flash[:fail] %>
-        <div class="alert alert-danger"><%=flash[:fail]%></div>
-  <% end %>
+      <div class="collapse navbar-collapse navHeaderCollapse">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class = "active" class = "dropdown dropdown-toggle" data-toggle= "dropdown">User Tools <b class = "caret"></b></li>
+            <ul class= "dropdown-menu">
+              <li> <% if logged_in? %>
+                <%= link_to "Your User Page", user_path(current_user) %>
+                <% end %>
+              </li>
+              <li> <% if logged_in? %>
+                <%= link_to "Pet Profile", profile_path(current_user.profile.id) %>
+                <% end %>
+              </li>
+          </ul>
+
+        </ul>
+    </div>
+  </div>
+</div>
+
+        <% if logged_in? %>
+            <%= link_to 'Logout', logout_path %>
+            <% else %>
+              <%= link_to 'Login', new_session_path %>
+          <% end %>
+          <% if flash[:success] %>
+            <div class="alert alert-success"><%=flash[:success]%></div>
+          <% elsif flash[:fail] %>
+                <div class="alert alert-danger"><%=flash[:fail]%></div>
+          <% end %>
 
   <script>
     $('.alert').delay(2000).slideUp()
+
+     $(document).ready(function(){
+      $('.navbar .dropdown').hover(function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideDown(50);
+      }, function() {
+          $(this).find('.dropdown-menu').first().stop(true, true).delay(50).slideUp(50)
+      });
+     })
   </script>
 
-  
 
 <%= yield %>
 

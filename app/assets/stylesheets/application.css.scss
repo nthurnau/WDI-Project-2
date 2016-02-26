@@ -21,24 +21,56 @@
 
 $gray-light: #8C8C8C;
 $gray-lighter: #8C8C8C;
+$watermelonBackground: #E87272;
 /* Site-Wide Styling*/
 body {
-  background: #E87272;
-
-
+ background-color: $watermelonBackground;
+ color: white;
 }
+
+
+
 .h2_session_new {
   text-align: center;
   color: white;
 }
 
+.btn-primary {
+    background: #72E8C6;
+    border:1px solid white
+}
+
+.btn-success {
+  background: #72E8C6;
+  border:1px solid white;
+}
+
+.form-group {
+  color: white;
+}
+
+.alert-success {
+  background-color: #72E8C6;
+  color: white;
+}
+
+.alert-danger {
+  background-color:#988AFF;
+  color: white;
+}
+
 .jumbotron {
   background: #988AFF;
+  color: white;
   text-align: center;
   font-family: Avocado-Regular;
-  color: white;
   border: 5px solid white;
   border-radius: 500px;
+}
+
+.user_title {
+  color: white;
+  text-align: center;
 }
 
 // /* microposts */
@@ -46,6 +78,7 @@ body {
 .microposts {
   list-style: none;
   padding: 0;
+  color: #72E8C6;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -63,7 +96,7 @@ body {
     }
   }
   .timestamp {
-    color: $gray-light;
+    color: #72E8C6;
     display: block;
     margin-left: 60px;
   }
@@ -105,7 +138,7 @@ span.picture {
     float: left;
     padding: 0 10px;
     border-left: 1px solid $gray-lighter;
-    color: gray;
+    color: #72E8C6;
     &:first-child {
       padding-left: 0;
       border: 0;
