@@ -45,7 +45,8 @@ See my [Trello Board for Project 2](https://trello.com/b/rrfmu7vt/wdi-project-tw
 * 4) Next, I began coding the basic rails components. I made models, controllers, and views that became the backbone of PetDates. I achieved full CRUD using RESTful Routing.
 * 5) Finally, after much debugging, I began to style using Bootstrap and CSS.
 
-###Unsolved Problems
-* 1) There are still odd bugs surrounding user profiles. For example, after navigating the links on the user page a few times, Chrome loses its ability to route back to the user profile that corresponds to the proper user id and profile id.
-* 2) Because I spent a lot of time debugging, I was unable to make the styling look as pristine as I wanted. I am pleased with the functionality though.
-* 3) There are links missing in some places, but the nav bar, when it works properly, takes care of most of the navigation issues when a user is logged in.  
+###Future Implementations
+* 1) Allow users to message each other rather than just posting via PetSounds.
+* 2) Update the styling to make the font more readable in forms, add some other things like grids that surround the profile info on each user page, and some other tweaks (I am pleased with the functionality though.).
+* 3) Update the navbar to include a link that allows users to search other users so that they may gather more friends.
+* 4) Allow people to create events on a separate form from the edit profile form. 
