@@ -1,33 +1,27 @@
 <h1>Edit a Profile for your Pookie!</h1>
+  <%= form_for @profile, url: profile_path, method: "patch", html: { multipart: true } do |f| %>
+    <div>
+      <%= f.label :name, "What is Pookie's name?" %>
+      <%= f.text_field :name %> <br><br>
+    </div>
+      <%= f.label :avatar, "Profile Photo" %>
+      <%= f.file_field :avatar %> <br> <br>
 
+      <%= f.label :location, "Location" %>
+      <%= f.text_field :location %> <br><br>
 
-<div class="form">
+      <%= f.label :breed, "What breed is your pookie, and What Does He or She Look Like?" %>
+      <%= f.text_field :breed %> <br><br>
 
+      <%= f.label :favorite_food, "What are Your Pookie's Favorite Foods?" %>
+      <%= f.text_area :favorite_food %> <br><br>
 
-<%= form_for @profile, url: profile_path, method: "patch", html: { multipart: true } do |f| %>
-<div>
-  <%= f.label :name, "What is Pookie's name?" %>
-  <%= f.text_field :name %> <br><br>
-</div>
-  <%= f.label :avatar, "Profile Photo" %>
-  <%= f.file_field :avatar %> <br> <br>
+      <%= f.label :behavior, "How does your Pookie play with others? Is she or he a leader or a follower?" %>
+      <%= f.text_area :behavior %> <br><br>
 
-  <%= f.label :location, "Location" %>
-  <%= f.text_field :location %> <br><br>
+      <%= f.label :activities, "What activities does Pookie like?" %>
+      <%= f.text_area :activities %>
 
-  <%= f.label :breed, "What breed is your pookie, and What Does He or She Look Like?" %>
-  <%= f.text_field :breed %> <br><br>
+      <%= f.submit %>
 
-  <%= f.label :favorite_food, "What are Your Pookie's Favorite Foods?" %>
-  <%= f.text_area :favorite_food %> <br><br>
-
-  <%= f.label :behavior, "How does your Pookie play with others? Is she or he a leader or a follower?" %>
-  <%= f.text_area :behavior %> <br><br>
-
-  <%= f.label :activities, "What activities does Pookie like?" %>
-  <%= f.text_area :activities %>
-
-  <%= f.submit %>
-
-<% end %>
-</div>
+      <% end %>
