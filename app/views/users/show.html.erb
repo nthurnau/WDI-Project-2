@@ -6,10 +6,10 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
 
       <!-- Allows user to compose PetSound -->
-      <h2> Pet Sounds </h2>
+      <h2> Write Pet Sounds </h2>
       <% if @user == current_user  %>
         <% if logged_in? %>
           <div class="row">
@@ -21,8 +21,9 @@
           </div>
         <% end %>
       <% end %>
+    </div>
       <!-- Shows PetSouds On Page -->
-      <div class="col-md-8">
+      <div class="col-md-3">
          <% if @user.microposts.any? %>
            <h3>PetSounds (<%= @user.microposts.count %>)</h3>
            <ol class="microposts">
@@ -31,14 +32,15 @@
            <%= will_paginate @microposts %>
          <% end %>
        </div> <br>
-    </div>
 
 
-    <div class="col-md-4">
+
+    <div class="col-md-3">
       <h2><%= @user.username %>'s Groups</h2>
       <%= link_to "Create a New Group", new_group_path %>
 
       <!-- Shows Friends On Page -->
+      <h2><%= @user.username %>'s Friends</h2>
       <section class="stats">
             <%= render 'shared/stats' %>
           </section>
@@ -46,7 +48,7 @@
     </div>
 
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <h2><%= @user.username %>'s House Keeping</h2>
       <!-- wrapping the links in an if makes the edit and deletes impossible for other users -->
       <% if @user == current_user  %>
