@@ -38,10 +38,22 @@ legend{
 .navbar {
   background-image: linear-gradient(#C5E8C6, #72E8C6);
   border: none;
+  font-family: Avocado-Regular;
+}
+
+.navbar-brand {
+  font-size: 35px;
+  margin-top: 15px;
 }
 
 .navbar-right {
   margin-top: 15px;
+  font-size: 35px;
+
+}
+
+.dropdown-menu {
+  font-size: 20px;
 }
 
 .h2_session_new {
