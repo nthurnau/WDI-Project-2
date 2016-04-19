@@ -1,27 +1,98 @@
-<h1>Edit a Profile for your Pookie!</h1>
-  <%= form_for @profile, url: profile_path, method: "patch", html: { multipart: true } do |f| %>
-    <div>
-      <%= f.label :name, "What is Pookie's name?" %>
-      <%= f.text_field :name %> <br><br>
+
+  <%= form_for @profile, url: profile_path, method: "patch", :class => 'form-horizontal', html: { multipart: true } do |f| %>
+    <div class="row">
+      <legend class="col-md-4 col-md-offset-4">Hey Pet! Edit Pookie's Profile!
+      </legend>
     </div>
-      <%= f.label :avatar, "Profile Photo" %>
-      <%= f.file_field :avatar %> <br> <br>
-
-      <%= f.label :location, "Location" %>
-      <%= f.text_field :location %> <br><br>
-
-      <%= f.label :breed, "What breed is your pookie, and What Does He or She Look Like?" %>
-      <%= f.text_field :breed %> <br><br>
-
-      <%= f.label :favorite_food, "What are Your Pookie's Favorite Foods?" %>
-      <%= f.text_area :favorite_food %> <br><br>
-
-      <%= f.label :behavior, "How does your Pookie play with others? Is she or he a leader or a follower?" %>
-      <%= f.text_area :behavior %> <br><br>
-
-      <%= f.label :activities, "What activities does Pookie like?" %>
-      <%= f.text_area :activities %>
+    <div class="form-group">
+        <%= profile_form.label :name, "What is Pookie's name?", class: 'col-md-4 control-label' %>
+        <div class="col-md-5">
+          <%= profile_form.text_field :name, class: 'form-control' %> <br>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= profile_form.label :avatar, "Profile Photo", class: 'col-md-4 control-label' %>
+        <div class="col-md-5">
+          <%= profile_form.file_field :avatar %> <br>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= profile_form.label :location, "Location", class: 'col-md-4 control-label' %>
+        <div class="col-md-5">
+          <%= profile_form.text_field :location, class: 'form-control' %> <br>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= profile_form.label :breed, "What breed is your pookie, and What Does He or She Look Like?", class: 'col-md-4 control-label' %>
+        <div class="col-md-5">
+          <%= profile_form.text_field :breed, class: 'form-control' %> <br>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= profile_form.label :favorite_food, "What are Your Pookie's Favorite Foods?", class: 'col-md-4 control-label' %>
+        <div class="col-md-5">
+          <%= profile_form.text_area :favorite_food, class: 'form-control' %> <br>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= profile_form.label :behavior, "How does your Pookie play with others? Is she or he a leader or a follower?", class: 'col-md-4 control-label' %>
+        <div class="col-md-5">
+          <%= profile_form.text_area :behavior, class: 'form-control' %> <br>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= profile_form.label :activities, "What activities does Pookie like?", class: 'col-md-4 control-label' %>
+        <div class="col-md-5">
+          <%= profile_form.text_area :activities, class: 'form-control' %> <br>
+        </div>
+    </div>
 
       <%= f.submit %>
 
-      <% end %>
+    <% end %>
+
+
+      <!-- <%= f.fields_for :profile,:class => 'form-horizontal' do | profile_form | %>
+      <div class="row"><legend class="col-md-4 col-md-offset-4">Hey Pet! Create Pookie's Profile!</legend></div>
+      <div class="form-group">
+          <%= profile_form.label :name, "What is Pookie's name?", class: 'col-md-4 control-label' %>
+          <div class="col-md-5">
+            <%= profile_form.text_field :name, class: 'form-control' %> <br>
+          </div>
+      </div>
+      <div class="form-group">
+          <%= profile_form.label :avatar, "Profile Photo", class: 'col-md-4 control-label' %>
+          <div class="col-md-5">
+            <%= profile_form.file_field :avatar %> <br>
+          </div>
+      </div>
+      <div class="form-group">
+          <%= profile_form.label :location, "Location", class: 'col-md-4 control-label' %>
+          <div class="col-md-5">
+            <%= profile_form.text_field :location, class: 'form-control' %> <br>
+          </div>
+      </div>
+      <div class="form-group">
+          <%= profile_form.label :breed, "What breed is your pookie, and What Does He or She Look Like?", class: 'col-md-4 control-label' %>
+          <div class="col-md-5">
+            <%= profile_form.text_field :breed, class: 'form-control' %> <br>
+          </div>
+      </div>
+      <div class="form-group">
+          <%= profile_form.label :favorite_food, "What are Your Pookie's Favorite Foods?", class: 'col-md-4 control-label' %>
+          <div class="col-md-5">
+            <%= profile_form.text_area :favorite_food, class: 'form-control' %> <br>
+          </div>
+      </div>
+      <div class="form-group">
+          <%= profile_form.label :behavior, "How does your Pookie play with others? Is she or he a leader or a follower?", class: 'col-md-4 control-label' %>
+          <div class="col-md-5">
+            <%= profile_form.text_area :behavior, class: 'form-control' %> <br>
+          </div>
+      </div>
+      <div class="form-group">
+          <%= profile_form.label :activities, "What activities does Pookie like?", class: 'col-md-4 control-label' %>
+          <div class="col-md-5">
+            <%= profile_form.text_area :activities, class: 'form-control' %> <br>
+          </div>
+      </div>       -->
