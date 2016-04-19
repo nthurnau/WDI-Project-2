@@ -1,14 +1,26 @@
 <h1>Create a New Group!</h1>
 
 <div class="form">
-<%= form_for @group do |f| %>
-  <%= f.label :name, "Name Your Group" %>
-  <%= f.text_field :name %> <br>
+      <%= form_for @group, :class => 'form-horizontal' do |f| %>
+  <div class="row">
+    <div class="form-group">
+        <%= f.label :name, "Name Your Group", class: 'col-md-4 control-label' %>
+      <div class="col-md-5">
+        <%= f.text_field :name, class: 'form-control'%> <br>
+      </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :description, "Describe your group. What are your interests? Who should Join?", class: 'col-md-4 control-label'%>
+      <div class="col-md-5">
+        <%= f.text_area :description, class: 'form-control' %> <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-5">
+        <%= f.submit %>
+    </div>
 
-  <%= f.label :description, "Describe your group. What are your interests? Who should Join?" %>
-  <%= f.text_area :description %> <br>
+      <% end %>
 
-  <%= f.submit %>
-
-  <% end %>
+  </div>
 </div>
