@@ -4,15 +4,11 @@
     <div class="row">
       <div class="col-md-4">
         <%= image_tag @profile.avatar.url(:medium) %> <br><br>
-        <p> Pet's Name: <%= @profile.name %> </p> <br><br>
-        <p> Pet's Location: <%= @profile.location %></p> <br><br>
-        <p>Pet's Breed: <%= @profile.breed %></p> <br><br>
-        <p>Pet's Favorite Food: <%= @profile.favorite_food %></p> <br><br>
-        <p>Pet's Behavior: <%= @profile.behavior %></p> <br><br>
-        <p>Pet's Favorite Activities: <%= @profile.activities %></p> <br><br>
+
       </div>
   <div class="col-md-4">
 <!-- shows friends stats -->
+      <h2><%= @profile.name %>'s Fans</h2>
       <section class="stats">
         <%= render 'shared/stats' %>
       </section>
@@ -25,6 +21,22 @@
       <div>
         <%= render 'shared/feed' %>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <h2><%= @profile.name %>'s Stats</h2>
+
+    <div class="col-md-4">
+      <p> Pet's Name: <%= @profile.name %> </p> <br><br>
+      <p> Pet's Location: <%= @profile.location %></p> <br><br>
+    </div>
+    <div class="col-md-4">
+      <p>Pet's Breed: <%= @profile.breed %></p> <br><br>
+      <p>Pet's Favorite Food: <%= @profile.favorite_food %></p> <br><br>
+    </div>
+    <div class="col-md-4">
+      <p>Pet's Behavior: <%= @profile.behavior %></p> <br><br>
+      <p>Pet's Favorite Activities: <%= @profile.activities %></p> <br><br>
     </div>
   </div>
 </div>
