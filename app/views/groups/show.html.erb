@@ -1,23 +1,41 @@
-<h1> Welcome to <%= @group.name %></h1>
+<h1 class="user_title"> Welcome to <%= @group.name %></h1>
 
 
 <!-- <%# image_tag @group.avatar.url(:medium) %> <br><br> -->
+<div class="=container">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-3">
+      <h2> About this group</h2><br>
+       <%= @group.description %> <br><br>
+    </div>
+    <div class="col-md-3">
+      <h2>Group Options</h2>
+      <%= link_to 'Join Group', join_group_path(@group) %> <br>
+      <%= link_to 'Leave Group', leave_group_path(@group) %> <br><br>
+    </div>
+    <div class="col-md-3">
+      <% @group.users.each do |user| %>
+        <%= user.username %> <br>
+        <%= image_tag user.avatar.url(:thumb) %> <br><br>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
 
-<p> About this group</p><br>
- <%= @group.description %> </p> <br><br>
+    </div>
+    <div class="col-md-4 pet-box">
+    <h3><%= @group.name %> Pet Dates</h3>
 
-<%= link_to 'Join Group', join_group_path(@group) %> <br>
-<%= link_to 'Leave Group', leave_group_path(@group) %> <br><br>
+      <h5> PetDate Name: <%= @group.event_name %> </h5> <br>
+      <h5> PetDate Location: <%= @group.event_location %> </h5> <br>
+      <h5> PetDate: <%= @group.event_date %> </h5> <br>
+      <h5> PetDate Time: <%= @group.event_time %> </h5> <br>
+      <%= link_to "Add An Event!", edit_group_path %>
+    </div>
+  </div>
 
-<% @group.users.each do |user| %>
-  <%= user.username %> <br>
-  <%= image_tag user.avatar.url(:thumb) %> <br><br>
-<% end %>
-
-<h3><%= @group.name %> Pet Dates</h3>
-
-  <h5> PetDate Name: <%= @group.event_name %> </h5> <br>
-  <h5> PetDate Location: <%= @group.event_location %> </h5> <br>
-  <h5> PetDate: <%= @group.event_date %> </h5> <br>
-  <h5> PetDate Time: <%= @group.event_time %> </h5> <br>
-  <%= link_to "Add An Event!", edit_group_path %>
+  </div>
+</div>
